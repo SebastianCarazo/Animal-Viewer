@@ -1,5 +1,6 @@
 /* styles.css */
 
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,30 +8,35 @@ body {
 }
 
 header {
-    background-color: #333;
+    /* Brownish gradient background */
+    background: linear-gradient(to right, #8B4513, #DEB887);
     color: #fff;
     padding: 15px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 header h1 {
-    display: inline-block;
     margin: 0;
+    flex: 1;
 }
 
 nav {
-    display: inline-block;
-    margin-left: 30px;
+    flex: 2;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 nav ul li {
-    display: inline;
     margin-right: 20px;
 }
 
@@ -40,11 +46,12 @@ nav ul li a {
 }
 
 #search-bar {
-    float: right;
     padding: 7px;
-    margin-top: 5px;
     border: none;
     border-radius: 4px;
+    flex: 1;
+    max-width: 200px;
+    margin-left: auto;
 }
 
 main {
@@ -54,11 +61,12 @@ main {
 #gallery .image-gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .image-gallery img {
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     height: auto;
     margin: 10px;
     border-radius: 8px;
@@ -74,4 +82,86 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px;
+}
+
+/* Responsive Styles */
+
+/* Tablets and small desktops */
+@media (max-width: 992px) {
+    nav ul {
+        justify-content: center;
+    }
+
+    #search-bar {
+        max-width: 150px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #search-bar {
+        width: 100%;
+        max-width: none;
+        margin: 10px 0 0 0;
+    }
+
+    .image-gallery img {
+        max-width: 45%;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .image-gallery img {
+        max-width: 90%;
+    }
+}
+
+/* Styles for the culture page */
+
+#culture-content {
+    padding: 20px 0;
+}
+
+.culture-item {
+    margin-bottom: 40px;
+}
+
+.culture-item img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+.culture-item h3 {
+    margin-top: 20px;
+    font-size: 1.8em;
+}
+
+.culture-item p {
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+/* Adjust culture-item images on smaller screens */
+@media (max-width: 768px) {
+    .culture-item img {
+        max-width: 100%;
+    }
 }
