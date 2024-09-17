@@ -26,14 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add more dog objects as needed
     ];
 
-    // Populate image gallery
-    const gallery = document.querySelector('.image-gallery');
-    dogs.forEach(dog => {
-        const img = document.createElement('img');
-        img.src = dog.image;
-        img.alt = dog.name;
-        gallery.appendChild(img);
-    });
+    // Popula
 
     // Display dog details
     const dogDetails = document.getElementById('dog-details');
